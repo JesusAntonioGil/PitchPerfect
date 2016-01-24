@@ -9,12 +9,26 @@
 /* Begin PBXBuildFile section */
 		961581F75350F2FD9FCE3C31 /* Pods_Pitch_Perfect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B54106FB3ACCC733960478 /* Pods_Pitch_Perfect.framework */; };
 		EA668A681C53A6900094170A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A671C53A6900094170A /* AppDelegate.swift */; };
-		EA668A6A1C53A6900094170A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A691C53A6900094170A /* ViewController.swift */; };
 		EA668A6D1C53A6900094170A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA668A6B1C53A6900094170A /* Main.storyboard */; };
 		EA668A6F1C53A6900094170A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA668A6E1C53A6900094170A /* Assets.xcassets */; };
 		EA668A721C53A6900094170A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA668A701C53A6900094170A /* LaunchScreen.storyboard */; };
 		EA668A7D1C53A6900094170A /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A7C1C53A6900094170A /* Pitch_PerfectTests.swift */; };
 		EA668A881C53A6900094170A /* Pitch_PerfectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A871C53A6900094170A /* Pitch_PerfectUITests.swift */; };
+		EA668A991C54FC410094170A /* ControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A981C54FC410094170A /* ControllerAssembly.swift */; };
+		EA668A9A1C54FC410094170A /* ControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A981C54FC410094170A /* ControllerAssembly.swift */; };
+		EA668A9B1C54FC410094170A /* ControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A981C54FC410094170A /* ControllerAssembly.swift */; };
+		EA668A9F1C54FD410094170A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A9E1C54FD410094170A /* RecordViewController.swift */; };
+		EA668AA01C54FD410094170A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A9E1C54FD410094170A /* RecordViewController.swift */; };
+		EA668AA11C54FD410094170A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A9E1C54FD410094170A /* RecordViewController.swift */; };
+		EA668AA41C54FFC10094170A /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AA31C54FFC10094170A /* RecordPresenter.swift */; };
+		EA668AA51C54FFC10094170A /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AA31C54FFC10094170A /* RecordPresenter.swift */; };
+		EA668AA61C54FFC10094170A /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AA31C54FFC10094170A /* RecordPresenter.swift */; };
+		EA668AA81C5504BC0094170A /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AA71C5504BC0094170A /* RecordManager.swift */; };
+		EA668AA91C5504BC0094170A /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AA71C5504BC0094170A /* RecordManager.swift */; };
+		EA668AAA1C5504BC0094170A /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AA71C5504BC0094170A /* RecordManager.swift */; };
+		EA668AAC1C5505320094170A /* CommonAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AAB1C5505320094170A /* CommonAssembly.swift */; };
+		EA668AAD1C5505320094170A /* CommonAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AAB1C5505320094170A /* CommonAssembly.swift */; };
+		EA668AAE1C5505320094170A /* CommonAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AAB1C5505320094170A /* CommonAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +54,6 @@
 		E910BC3BD777E1E2BBB84394 /* Pods-Pitch Perfect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitch Perfect.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pitch Perfect/Pods-Pitch Perfect.release.xcconfig"; sourceTree = "<group>"; };
 		EA668A641C53A6900094170A /* Pitch Perfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pitch Perfect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA668A671C53A6900094170A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA668A691C53A6900094170A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA668A6C1C53A6900094170A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA668A6E1C53A6900094170A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA668A711C53A6900094170A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +64,12 @@
 		EA668A831C53A6900094170A /* Pitch PerfectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pitch PerfectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA668A871C53A6900094170A /* Pitch_PerfectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectUITests.swift; sourceTree = "<group>"; };
 		EA668A891C53A6900094170A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA668A971C54FB970094170A /* PitchPerfectBridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchPerfectBridging.h; sourceTree = "<group>"; };
+		EA668A981C54FC410094170A /* ControllerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerAssembly.swift; sourceTree = "<group>"; };
+		EA668A9E1C54FD410094170A /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		EA668AA31C54FFC10094170A /* RecordPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
+		EA668AA71C5504BC0094170A /* RecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
+		EA668AAB1C5505320094170A /* CommonAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				EA668A671C53A6900094170A /* AppDelegate.swift */,
-				EA668A691C53A6900094170A /* ViewController.swift */,
+				EA668A971C54FB970094170A /* PitchPerfectBridging.h */,
+				EA668A951C54FB440094170A /* Assembly */,
+				EA668A961C54FB440094170A /* Sections */,
+				EA668AA21C54FEB10094170A /* Common */,
 				EA668A6B1C53A6900094170A /* Main.storyboard */,
 				EA668A6E1C53A6900094170A /* Assets.xcassets */,
 				EA668A701C53A6900094170A /* LaunchScreen.storyboard */,
@@ -147,6 +169,48 @@
 				EA668A891C53A6900094170A /* Info.plist */,
 			);
 			path = "Pitch PerfectUITests";
+			sourceTree = "<group>";
+		};
+		EA668A951C54FB440094170A /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				EA668A981C54FC410094170A /* ControllerAssembly.swift */,
+				EA668AAB1C5505320094170A /* CommonAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		EA668A961C54FB440094170A /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				EA668A9D1C54FD230094170A /* Record */,
+				EA668A9C1C54FD230094170A /* Play */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		EA668A9C1C54FD230094170A /* Play */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		EA668A9D1C54FD230094170A /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				EA668AA31C54FFC10094170A /* RecordPresenter.swift */,
+				EA668A9E1C54FD410094170A /* RecordViewController.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		EA668AA21C54FEB10094170A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EA668AA71C5504BC0094170A /* RecordManager.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,8 +398,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA668A6A1C53A6900094170A /* ViewController.swift in Sources */,
+				EA668A9F1C54FD410094170A /* RecordViewController.swift in Sources */,
 				EA668A681C53A6900094170A /* AppDelegate.swift in Sources */,
+				EA668A991C54FC410094170A /* ControllerAssembly.swift in Sources */,
+				EA668AA81C5504BC0094170A /* RecordManager.swift in Sources */,
+				EA668AAC1C5505320094170A /* CommonAssembly.swift in Sources */,
+				EA668AA41C54FFC10094170A /* RecordPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +411,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA668AA01C54FD410094170A /* RecordViewController.swift in Sources */,
 				EA668A7D1C53A6900094170A /* Pitch_PerfectTests.swift in Sources */,
+				EA668A9A1C54FC410094170A /* ControllerAssembly.swift in Sources */,
+				EA668AA91C5504BC0094170A /* RecordManager.swift in Sources */,
+				EA668AAD1C5505320094170A /* CommonAssembly.swift in Sources */,
+				EA668AA51C54FFC10094170A /* RecordPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +424,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA668AA11C54FD410094170A /* RecordViewController.swift in Sources */,
 				EA668A881C53A6900094170A /* Pitch_PerfectUITests.swift in Sources */,
+				EA668A9B1C54FC410094170A /* ControllerAssembly.swift in Sources */,
+				EA668AAA1C5504BC0094170A /* RecordManager.swift in Sources */,
+				EA668AAE1C5505320094170A /* CommonAssembly.swift in Sources */,
+				EA668AA61C54FFC10094170A /* RecordPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

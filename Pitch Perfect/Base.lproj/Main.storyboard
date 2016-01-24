@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wMd-7N-ElP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Record" id="BYZ-38-t0r" customClass="RecordViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,82 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33x-6o-TDq">
+                                <rect key="frame" x="258" y="257" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="N8P-6a-hDQ"/>
+                                    <constraint firstAttribute="width" constant="85" id="rKu-Q6-EI9"/>
+                                </constraints>
+                                <state key="normal" image="Microphone"/>
+                                <connections>
+                                    <action selector="onRecordButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zuC-IR-pYF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCv-SY-UYq">
+                                <rect key="frame" x="258" y="350" width="85" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="0qV-o4-I3m"/>
+                                    <constraint firstAttribute="width" constant="85" id="krd-TA-Jab"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" red="0.10196078431372549" green="0.22352941176470589" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-cs-1MZ">
+                                <rect key="frame" x="280" y="407" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DsL-0m-nNc"/>
+                                    <constraint firstAttribute="width" constant="40" id="fhh-yU-XUn"/>
+                                </constraints>
+                                <state key="normal" image="Stop"/>
+                                <connections>
+                                    <action selector="onStopButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wzC-cT-GYK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="33x-6o-TDq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2FW-Cy-aad"/>
+                            <constraint firstItem="XCv-SY-UYq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9qE-1R-lxX"/>
+                            <constraint firstItem="33x-6o-TDq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jbm-Kk-4B4"/>
+                            <constraint firstItem="XCv-SY-UYq" firstAttribute="top" secondItem="33x-6o-TDq" secondAttribute="bottom" constant="8" id="YmU-WB-FaB"/>
+                            <constraint firstItem="Bha-cs-1MZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eKi-Kz-NqH"/>
+                            <constraint firstItem="Bha-cs-1MZ" firstAttribute="top" secondItem="XCv-SY-UYq" secondAttribute="bottom" constant="29" id="hTx-Iu-cvs"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Record" id="G3d-wN-enw"/>
+                    <connections>
+                        <outlet property="recordButton" destination="33x-6o-TDq" id="ypS-e0-YDn"/>
+                        <outlet property="recordStateLabel" destination="XCv-SY-UYq" id="ldf-oN-0I3"/>
+                        <outlet property="stopButton" destination="Bha-cs-1MZ" id="WWy-03-5Nk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1051" y="290"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pLF-OP-VDR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wMd-7N-ElP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xzH-KZ-IRs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OKs-GU-eCh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="19I-OB-gxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="290"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Microphone" width="100" height="100"/>
+        <image name="Stop" width="50" height="50"/>
+    </resources>
 </document>
