@@ -11,15 +11,16 @@ import UIKit
 
 @objc protocol RecordPresenterDelegate
 {
-    
+    func recordPresenterDidFinishRecording(success: Bool, recorderAudio: RecorderAudio!)
 }
 
 
-class RecordPresenter: NSObject {
+class RecordPresenter: NSObject, RecordManagerDelegate {
 
     //Injected
-    var viewController: RecordViewController!
+    var viewController: RecordPresenterDelegate!
     var recordManager: RecordManager!
+    var controllerAssembly: ControllerAssembly!
     
     
     //MARK: PUBLIC
@@ -29,5 +30,22 @@ class RecordPresenter: NSObject {
         
     }
     
+    func recordSound()
+    {
+        self.recordManager.delegate = self
+        self.recordManager.recordAudio()
+    }
     
+    func stopSound()
+    {
+        self.recordManager.stopAudio()
+    }
+    
+    //MARK: PROTOCOLS & DELEGATES
+    //MARK: RecordManager Delegate
+    
+    func recordManagerDidFinishRecording(success: Bool, recorderAudio: RecorderAudio!)
+    {
+        self.viewController.recordPresenterDidFinishRecording(success, recorderAudio: recorderAudio)
+    }
 }

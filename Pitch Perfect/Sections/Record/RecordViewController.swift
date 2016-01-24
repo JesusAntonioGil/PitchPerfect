@@ -39,12 +39,32 @@ class RecordViewController: UIViewController, RecordPresenterDelegate {
     
     @IBAction func onRecordButtonTap(sender: AnyObject)
     {
+        self.stopButton.hidden = false
         
+        self.presenter.recordSound()
     }
     
     @IBAction func onStopButtonTap(sender: AnyObject)
     {
-        
+        self.presenter.stopSound()
+    }
+    
+    //MARK: PRIVATE
+    
+    private func pushToPlayViewController(recorderAudio: RecorderAudio)
+    {
+        let playViewController: PlayViewController = self.controllerAssembly.playViewController(recorderAudio) as! PlayViewController
+        self.navigationController?.pushViewController(playViewController, animated: true)
     }
 
+    //MARK: PROTOCOLS & DELEGATES
+    //MARK: RecordPresenter Delegate
+    
+    func recordPresenterDidFinishRecording(success: Bool, recorderAudio: RecorderAudio!)
+    {
+        if(success)
+        {
+            self.pushToPlayViewController(recorderAudio)
+        }
+    }
 }

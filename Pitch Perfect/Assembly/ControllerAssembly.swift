@@ -21,6 +21,7 @@ class ControllerAssembly: TyphoonAssembly {
     
     
     //MARK: PUBLIC
+    //MARK: RecordViewController
     
     internal dynamic func recordViewController() -> AnyObject
     {
@@ -37,9 +38,30 @@ class ControllerAssembly: TyphoonAssembly {
         let definitionBlock: TyphoonDefinitionBlock = { (definition: TyphoonDefinition!) in
             definition.injectProperty("viewController", with: viewController)
             definition.injectProperty("recordManager", with: self.commonAssembly.recordManager())
+            definition.injectProperty("controllerAssembly", with: self)
         }
         
         return TyphoonDefinition.withClass(RecordPresenter.self, configuration: definitionBlock)
+    }
+    
+    //MARK: PlayViewController
+    
+    internal dynamic func playViewController(recorderAudio: RecorderAudio) -> AnyObject
+    {
+        return TyphoonDefinition.withFactory(self.storyboard(), selector: instantiateControllerSelector, parameters: { (typhoonMethod) -> Void in
+                typhoonMethod.injectParameterWith("PlayViewController")
+            }, configuration: { (definition) -> Void in
+                definition.injectProperty("controllerAssembly", with: self)
+        })
+    }
+    
+    internal dynamic func playPresenter(viewController: PlayPresenterDelegate) -> AnyObject
+    {
+        let definitionBlock: TyphoonDefinitionBlock = { (definition: TyphoonDefinition!) in
+            definition.injectProperty("viewController", with: viewController)
+        }
+        
+        return TyphoonDefinition.withClass(PlayPresenter.self, configuration: definitionBlock)
     }
     
     
@@ -52,8 +74,8 @@ class ControllerAssembly: TyphoonAssembly {
             {
                 (definition) in
                 definition.useInitializer("storyboardWithName:factory:bundle:")
-                    {
-                        (initializer) in
+                {
+                    (initializer) in
                         initializer.injectParameterWith("Main")
                         initializer.injectParameterWith(self)
                         initializer.injectParameterWith(NSBundle.mainBundle())

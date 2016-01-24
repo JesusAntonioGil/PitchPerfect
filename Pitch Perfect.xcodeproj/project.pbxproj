@@ -29,6 +29,15 @@
 		EA668AAC1C5505320094170A /* CommonAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AAB1C5505320094170A /* CommonAssembly.swift */; };
 		EA668AAD1C5505320094170A /* CommonAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AAB1C5505320094170A /* CommonAssembly.swift */; };
 		EA668AAE1C5505320094170A /* CommonAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AAB1C5505320094170A /* CommonAssembly.swift */; };
+		EA668AB01C551C2B0094170A /* RecorderAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AAF1C551C2B0094170A /* RecorderAudio.swift */; };
+		EA668AB11C551C2B0094170A /* RecorderAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AAF1C551C2B0094170A /* RecorderAudio.swift */; };
+		EA668AB21C551C2B0094170A /* RecorderAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668AAF1C551C2B0094170A /* RecorderAudio.swift */; };
+		EA75954C1C55247C007AD5A4 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75954B1C55247C007AD5A4 /* PlayViewController.swift */; };
+		EA75954D1C55247C007AD5A4 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75954B1C55247C007AD5A4 /* PlayViewController.swift */; };
+		EA75954E1C55247C007AD5A4 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75954B1C55247C007AD5A4 /* PlayViewController.swift */; };
+		EA7595501C5524A3007AD5A4 /* PlayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75954F1C5524A3007AD5A4 /* PlayPresenter.swift */; };
+		EA7595511C5524A3007AD5A4 /* PlayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75954F1C5524A3007AD5A4 /* PlayPresenter.swift */; };
+		EA7595521C5524A3007AD5A4 /* PlayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75954F1C5524A3007AD5A4 /* PlayPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +79,9 @@
 		EA668AA31C54FFC10094170A /* RecordPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
 		EA668AA71C5504BC0094170A /* RecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 		EA668AAB1C5505320094170A /* CommonAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonAssembly.swift; sourceTree = "<group>"; };
+		EA668AAF1C551C2B0094170A /* RecorderAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderAudio.swift; sourceTree = "<group>"; };
+		EA75954B1C55247C007AD5A4 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		EA75954F1C5524A3007AD5A4 /* PlayPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +204,8 @@
 		EA668A9C1C54FD230094170A /* Play */ = {
 			isa = PBXGroup;
 			children = (
+				EA75954F1C5524A3007AD5A4 /* PlayPresenter.swift */,
+				EA75954B1C55247C007AD5A4 /* PlayViewController.swift */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -208,6 +222,7 @@
 		EA668AA21C54FEB10094170A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EA668AAF1C551C2B0094170A /* RecorderAudio.swift */,
 				EA668AA71C5504BC0094170A /* RecordManager.swift */,
 			);
 			path = Common;
@@ -398,10 +413,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA75954C1C55247C007AD5A4 /* PlayViewController.swift in Sources */,
 				EA668A9F1C54FD410094170A /* RecordViewController.swift in Sources */,
+				EA7595501C5524A3007AD5A4 /* PlayPresenter.swift in Sources */,
 				EA668A681C53A6900094170A /* AppDelegate.swift in Sources */,
 				EA668A991C54FC410094170A /* ControllerAssembly.swift in Sources */,
 				EA668AA81C5504BC0094170A /* RecordManager.swift in Sources */,
+				EA668AB01C551C2B0094170A /* RecorderAudio.swift in Sources */,
 				EA668AAC1C5505320094170A /* CommonAssembly.swift in Sources */,
 				EA668AA41C54FFC10094170A /* RecordPresenter.swift in Sources */,
 			);
@@ -411,10 +429,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA75954D1C55247C007AD5A4 /* PlayViewController.swift in Sources */,
 				EA668AA01C54FD410094170A /* RecordViewController.swift in Sources */,
+				EA7595511C5524A3007AD5A4 /* PlayPresenter.swift in Sources */,
 				EA668A7D1C53A6900094170A /* Pitch_PerfectTests.swift in Sources */,
 				EA668A9A1C54FC410094170A /* ControllerAssembly.swift in Sources */,
 				EA668AA91C5504BC0094170A /* RecordManager.swift in Sources */,
+				EA668AB11C551C2B0094170A /* RecorderAudio.swift in Sources */,
 				EA668AAD1C5505320094170A /* CommonAssembly.swift in Sources */,
 				EA668AA51C54FFC10094170A /* RecordPresenter.swift in Sources */,
 			);
@@ -424,10 +445,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA75954E1C55247C007AD5A4 /* PlayViewController.swift in Sources */,
 				EA668AA11C54FD410094170A /* RecordViewController.swift in Sources */,
+				EA7595521C5524A3007AD5A4 /* PlayPresenter.swift in Sources */,
 				EA668A881C53A6900094170A /* Pitch_PerfectUITests.swift in Sources */,
 				EA668A9B1C54FC410094170A /* ControllerAssembly.swift in Sources */,
 				EA668AAA1C5504BC0094170A /* RecordManager.swift in Sources */,
+				EA668AB21C551C2B0094170A /* RecorderAudio.swift in Sources */,
 				EA668AAE1C5505320094170A /* CommonAssembly.swift in Sources */,
 				EA668AA61C54FFC10094170A /* RecordPresenter.swift in Sources */,
 			);
@@ -554,6 +578,7 @@
 			baseConfigurationReference = 9D7DD4D2FEB22C848F104D70 /* Pods-Pitch Perfect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Pitch Perfect/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jag.Pitch-Perfect";
@@ -566,6 +591,7 @@
 			baseConfigurationReference = E910BC3BD777E1E2BBB84394 /* Pods-Pitch Perfect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Pitch Perfect/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jag.Pitch-Perfect";
