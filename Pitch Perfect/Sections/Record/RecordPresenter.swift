@@ -18,7 +18,7 @@ import UIKit
 class RecordPresenter: NSObject, RecordManagerDelegate {
 
     //Injected
-    var viewController: RecordPresenterDelegate!
+    var delegate: RecordPresenterDelegate!
     var recordManager: RecordManager!
     var controllerAssembly: ControllerAssembly!
     
@@ -41,6 +41,6 @@ class RecordPresenter: NSObject, RecordManagerDelegate {
     
     func recordManagerDidFinishRecording(success: Bool, recorderAudio: RecorderAudio!)
     {
-        self.viewController.recordPresenterDidFinishRecording(success, recorderAudio: recorderAudio)
+        self.delegate.recordPresenterDidFinishRecording(success, recorderAudio: recorderAudio)
     }
 }

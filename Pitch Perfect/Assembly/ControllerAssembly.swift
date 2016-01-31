@@ -33,10 +33,10 @@ class ControllerAssembly: TyphoonAssembly {
         }
     }
     
-    internal dynamic func recordPresenter(viewController: RecordPresenterDelegate) -> AnyObject
+    internal dynamic func recordPresenter(delegate: RecordPresenterDelegate) -> AnyObject
     {
         let definitionBlock: TyphoonDefinitionBlock = { (definition: TyphoonDefinition!) in
-            definition.injectProperty("viewController", with: viewController)
+            definition.injectProperty("delegate", with: delegate)
             definition.injectProperty("recordManager", with: self.commonAssembly.recordManager())
             definition.injectProperty("controllerAssembly", with: self)
         }
@@ -56,10 +56,10 @@ class ControllerAssembly: TyphoonAssembly {
         })
     }
     
-    internal dynamic func playPresenter(viewController: PlayPresenterDelegate) -> AnyObject
+    internal dynamic func playPresenter(delegate: PlayPresenterDelegate) -> AnyObject
     {
         let definitionBlock: TyphoonDefinitionBlock = { (definition: TyphoonDefinition!) in
-            definition.injectProperty("viewController", with: viewController)
+            definition.injectProperty("delegate", with: delegate)
             definition.injectProperty("playManager", with: self.commonAssembly.playManager())
         }
         

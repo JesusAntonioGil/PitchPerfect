@@ -11,14 +11,14 @@ import UIKit
 
 @objc protocol PlayPresenterDelegate
 {
-    
+    func presenterAudioFinish()
 }
 
 
-class PlayPresenter: NSObject {
+class PlayPresenter: NSObject, PlayManagerDelegate {
 
     //Injected
-    var viewController: PlayPresenterDelegate!
+    var delegate: PlayPresenterDelegate!
     var playManager: PlayManager!
     
     
@@ -26,6 +26,19 @@ class PlayPresenter: NSObject {
     
     func playAudio(url: NSURL, type: PlayType)
     {
+        self.playManager.delegate = self
         self.playManager.playAudioWithURL(url, type: type)
+    }
+    
+    func stopAudio()
+    {
+        self.playManager.stopAudio()
+    }
+    
+    //MARK: PROTOCOLS & DELEGATES
+    
+    func playManagerAudioFinish()
+    {
+        self.delegate.presenterAudioFinish()
     }
 }

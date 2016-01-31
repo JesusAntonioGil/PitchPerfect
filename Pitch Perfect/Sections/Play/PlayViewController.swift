@@ -11,6 +11,8 @@ import UIKit
 
 class PlayViewController: UIViewController, PlayPresenterDelegate {
 
+    @IBOutlet weak var stopButton: UIButton!
+    
     //Injected
     var controllerAssembly: ControllerAssembly!
     var recorderAudio: RecorderAudio!
@@ -26,6 +28,13 @@ class PlayViewController: UIViewController, PlayPresenterDelegate {
         
         self.presenter = self.controllerAssembly.playPresenter(self) as! PlayPresenter
     }
+    
+    override func viewWillDisappear(animated: Bool)
+    {
+        self.presenter.stopAudio()
+        
+        super.viewWillDisappear(animated)
+    }
 
     override func didReceiveMemoryWarning()
     {
@@ -38,6 +47,20 @@ class PlayViewController: UIViewController, PlayPresenterDelegate {
     @IBAction func onPlayButtonTap(sender: AnyObject)
     {
         self.presenter.playAudio(self.recorderAudio.filePathURL, type: PlayType(rawValue: sender.tag)!)
+        self.stopButton.hidden = false
     }
-
+    
+    @IBAction func onStopButtonTap(sender: AnyObject)
+    {
+        self.presenter.stopAudio()
+        self.stopButton.hidden = true
+    }
+    
+    
+    //MARK: PROTOCOLS & DELEGATES
+    
+    func presenterAudioFinish()
+    {
+        self.stopButton.hidden = true
+    }
 }
