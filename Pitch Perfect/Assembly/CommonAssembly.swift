@@ -22,4 +22,14 @@ class CommonAssembly: TyphoonAssembly {
                 definition.scope = .Singleton
         }
     }
+    
+    internal dynamic func playManager() -> AnyObject
+    {
+        return TyphoonDefinition.withClass(PlayManager.self)
+        {
+            (definition) in
+                definition.scope = .Singleton
+        }
+    }
+    
 }

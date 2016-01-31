@@ -19,12 +19,13 @@ class PlayPresenter: NSObject {
 
     //Injected
     var viewController: PlayPresenterDelegate!
+    var playManager: PlayManager!
     
     
     //MARK: PUBLIC
     
-    func viewIsReady()
+    func playAudio(url: NSURL, type: PlayType)
     {
-        
+        self.playManager.playAudioWithURL(url, type: type)
     }
 }

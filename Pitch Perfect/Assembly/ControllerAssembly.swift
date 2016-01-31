@@ -52,6 +52,7 @@ class ControllerAssembly: TyphoonAssembly {
                 typhoonMethod.injectParameterWith("PlayViewController")
             }, configuration: { (definition) -> Void in
                 definition.injectProperty("controllerAssembly", with: self)
+                definition.injectProperty("recorderAudio", with: recorderAudio)
         })
     }
     
@@ -59,6 +60,7 @@ class ControllerAssembly: TyphoonAssembly {
     {
         let definitionBlock: TyphoonDefinitionBlock = { (definition: TyphoonDefinition!) in
             definition.injectProperty("viewController", with: viewController)
+            definition.injectProperty("playManager", with: self.commonAssembly.playManager())
         }
         
         return TyphoonDefinition.withClass(PlayPresenter.self, configuration: definitionBlock)

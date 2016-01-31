@@ -27,7 +27,6 @@ class RecordViewController: UIViewController, RecordPresenterDelegate {
         super.viewDidLoad()
         
         self.presenter = self.controllerAssembly.recordPresenter(self) as! RecordPresenter
-        self.presenter.viewIsReady()
     }
 
     override func didReceiveMemoryWarning()
@@ -39,7 +38,9 @@ class RecordViewController: UIViewController, RecordPresenterDelegate {
     
     @IBAction func onRecordButtonTap(sender: AnyObject)
     {
+        self.recordButton.enabled = false
         self.stopButton.hidden = false
+        self.recordStateLabel.text = "Recording!"
         
         self.presenter.recordSound()
     }
@@ -64,6 +65,10 @@ class RecordViewController: UIViewController, RecordPresenterDelegate {
     {
         if(success)
         {
+            self.recordButton.enabled = true
+            self.stopButton.hidden = true
+            self.recordStateLabel.text = "Record!"
+            
             self.pushToPlayViewController(recorderAudio)
         }
     }

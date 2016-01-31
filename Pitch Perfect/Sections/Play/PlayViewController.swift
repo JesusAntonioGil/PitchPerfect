@@ -8,10 +8,12 @@
 
 import UIKit
 
+
 class PlayViewController: UIViewController, PlayPresenterDelegate {
 
     //Injected
     var controllerAssembly: ControllerAssembly!
+    var recorderAudio: RecorderAudio!
     
     private var presenter: PlayPresenter!
     
@@ -23,7 +25,6 @@ class PlayViewController: UIViewController, PlayPresenterDelegate {
         super.viewDidLoad()
         
         self.presenter = self.controllerAssembly.playPresenter(self) as! PlayPresenter
-        self.presenter.viewIsReady()
     }
 
     override func didReceiveMemoryWarning()
@@ -31,6 +32,12 @@ class PlayViewController: UIViewController, PlayPresenterDelegate {
         super.didReceiveMemoryWarning()
     }
     
-
+    
+    //MARK: ACTIONS
+    
+    @IBAction func onPlayButtonTap(sender: AnyObject)
+    {
+        self.presenter.playAudio(self.recorderAudio.filePathURL, type: PlayType(rawValue: sender.tag)!)
+    }
 
 }

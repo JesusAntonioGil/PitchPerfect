@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		961581F75350F2FD9FCE3C31 /* Pods_Pitch_Perfect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B54106FB3ACCC733960478 /* Pods_Pitch_Perfect.framework */; };
+		EA1AA7B51C5E209C00A9E270 /* PlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AA7B41C5E209C00A9E270 /* PlayManager.swift */; };
+		EA1AA7B61C5E209C00A9E270 /* PlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AA7B41C5E209C00A9E270 /* PlayManager.swift */; };
+		EA1AA7B71C5E209C00A9E270 /* PlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1AA7B41C5E209C00A9E270 /* PlayManager.swift */; };
 		EA668A681C53A6900094170A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA668A671C53A6900094170A /* AppDelegate.swift */; };
 		EA668A6D1C53A6900094170A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA668A6B1C53A6900094170A /* Main.storyboard */; };
 		EA668A6F1C53A6900094170A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA668A6E1C53A6900094170A /* Assets.xcassets */; };
@@ -61,6 +64,7 @@
 		42B54106FB3ACCC733960478 /* Pods_Pitch_Perfect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pitch_Perfect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7DD4D2FEB22C848F104D70 /* Pods-Pitch Perfect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitch Perfect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pitch Perfect/Pods-Pitch Perfect.debug.xcconfig"; sourceTree = "<group>"; };
 		E910BC3BD777E1E2BBB84394 /* Pods-Pitch Perfect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitch Perfect.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pitch Perfect/Pods-Pitch Perfect.release.xcconfig"; sourceTree = "<group>"; };
+		EA1AA7B41C5E209C00A9E270 /* PlayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayManager.swift; sourceTree = "<group>"; };
 		EA668A641C53A6900094170A /* Pitch Perfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pitch Perfect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA668A671C53A6900094170A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA668A6C1C53A6900094170A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 			children = (
 				EA668AAF1C551C2B0094170A /* RecorderAudio.swift */,
 				EA668AA71C5504BC0094170A /* RecordManager.swift */,
+				EA1AA7B41C5E209C00A9E270 /* PlayManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA75954C1C55247C007AD5A4 /* PlayViewController.swift in Sources */,
+				EA1AA7B51C5E209C00A9E270 /* PlayManager.swift in Sources */,
 				EA668A9F1C54FD410094170A /* RecordViewController.swift in Sources */,
 				EA7595501C5524A3007AD5A4 /* PlayPresenter.swift in Sources */,
 				EA668A681C53A6900094170A /* AppDelegate.swift in Sources */,
@@ -430,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA75954D1C55247C007AD5A4 /* PlayViewController.swift in Sources */,
+				EA1AA7B61C5E209C00A9E270 /* PlayManager.swift in Sources */,
 				EA668AA01C54FD410094170A /* RecordViewController.swift in Sources */,
 				EA7595511C5524A3007AD5A4 /* PlayPresenter.swift in Sources */,
 				EA668A7D1C53A6900094170A /* Pitch_PerfectTests.swift in Sources */,
@@ -446,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA75954E1C55247C007AD5A4 /* PlayViewController.swift in Sources */,
+				EA1AA7B71C5E209C00A9E270 /* PlayManager.swift in Sources */,
 				EA668AA11C54FD410094170A /* RecordViewController.swift in Sources */,
 				EA7595521C5524A3007AD5A4 /* PlayPresenter.swift in Sources */,
 				EA668A881C53A6900094170A /* Pitch_PerfectUITests.swift in Sources */,

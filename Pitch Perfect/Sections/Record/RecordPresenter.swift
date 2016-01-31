@@ -25,11 +25,6 @@ class RecordPresenter: NSObject, RecordManagerDelegate {
     
     //MARK: PUBLIC
     
-    func viewIsReady()
-    {
-        
-    }
-    
     func recordSound()
     {
         self.recordManager.delegate = self
