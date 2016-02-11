@@ -33,6 +33,8 @@ class PlayManager: NSObject, AVAudioPlayerDelegate {
     private var audioPlayer = AVAudioPlayer()
     private var audioEngine = AVAudioEngine()
     private var pitchPlayer = AVAudioPlayerNode()
+    private var audioPlayerState: Bool = false
+    private var audioEngineState: Bool = false
     
     
     override init()
@@ -43,7 +45,8 @@ class PlayManager: NSObject, AVAudioPlayerDelegate {
     //MARK: PUBLIC
     
     func playAudioWithURL(url: NSURL, type: PlayType)
-    {   
+    {
+        self.stopAudio()
         self.playType = type
         
         switch (type)
@@ -64,10 +67,16 @@ class PlayManager: NSObject, AVAudioPlayerDelegate {
         switch (self.playType)
         {
             case .Slow, .Fast:
-                self.audioPlayer.stop()
+                if(self.audioPlayerState == true) {
+                    self.audioPlayer.stop()
+                    self.audioEngineState = false
+                }
             case .Chipmunk, .Vader:
-                self.audioEngine.stop()
-                self.pitchPlayer.stop()
+                if(self.audioEngineState == true) {
+                    self.audioEngine.stop()
+                    self.pitchPlayer.stop()
+                    self.audioEngineState = false
+                }
         }
         
         self.delegate.playManagerAudioFinish()
@@ -88,6 +97,7 @@ class PlayManager: NSObject, AVAudioPlayerDelegate {
             self.audioPlayer.rate = rate
             self.audioPlayer.prepareToPlay()
             self.audioPlayer.play()
+            self.audioPlayerState = true
         }
         catch
         {
@@ -115,6 +125,7 @@ class PlayManager: NSObject, AVAudioPlayerDelegate {
             try self.pitchPlayer.scheduleFile(AVAudioFile(forReading: url), atTime: nil, completionHandler: nil)
             try self.audioEngine.start()
             self.pitchPlayer.play()
+            self.audioEngineState = true
         }
         catch
         {
@@ -127,6 +138,7 @@ class PlayManager: NSObject, AVAudioPlayerDelegate {
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool)
     {
+        self.audioPlayerState = false
         self.delegate.playManagerAudioFinish()
     }
 
