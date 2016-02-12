@@ -28,16 +28,6 @@
                                     <action selector="onRecordButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zuC-IR-pYF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCv-SY-UYq">
-                                <rect key="frame" x="258" y="350" width="85" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="0qV-o4-I3m"/>
-                                    <constraint firstAttribute="width" constant="85" id="krd-TA-Jab"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <color key="textColor" red="0.10196078431372549" green="0.22352941176470589" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-cs-1MZ">
                                 <rect key="frame" x="280" y="407" width="40" height="40"/>
                                 <constraints>
@@ -49,6 +39,16 @@
                                     <action selector="onStopButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wzC-cT-GYK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCv-SY-UYq">
+                                <rect key="frame" x="236" y="350" width="129" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="0qV-o4-I3m"/>
+                                    <constraint firstAttribute="width" constant="129" id="krd-TA-Jab"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" red="0.10196078431372549" green="0.22352941176470589" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

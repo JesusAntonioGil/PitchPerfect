@@ -14,7 +14,7 @@ class PlayViewController: UIViewController, PlayPresenterDelegate {
     @IBOutlet weak var stopButton: UIButton!
     
     var recorderAudio: RecorderAudio!
-    private var controllerAssembly = ControllerAssembly()
+    var controllerAssembly: ControllerAssembly!
     private var presenter: PlayPresenter!
     
     

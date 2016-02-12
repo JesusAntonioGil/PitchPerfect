@@ -41,6 +41,7 @@ class RecordViewController: UIViewController, RecordPresenterDelegate {
         {
             let playViewController: PlayViewController = segue.destinationViewController as! PlayViewController
             playViewController.recorderAudio = recorderAudio
+            playViewController.controllerAssembly = self.controllerAssembly
         }
     }
 
@@ -77,7 +78,7 @@ class RecordViewController: UIViewController, RecordPresenterDelegate {
         {
             recordButton.enabled = true
             stopButton.hidden = true
-            recordStateLabel.text = "Record!"
+            recordStateLabel.text = "Tap to Record"
             
             pushToPlayViewController(recorderAudio)
         }
