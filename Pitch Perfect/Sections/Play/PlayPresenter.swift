@@ -26,19 +26,19 @@ class PlayPresenter: NSObject, PlayManagerDelegate {
     
     func playAudio(url: NSURL, type: PlayType)
     {
-        self.playManager.delegate = self
-        self.playManager.playAudioWithURL(url, type: type)
+        playManager.delegate = self
+        playManager.playAudioWithURL(url, type: type)
     }
     
     func stopAudio()
     {
-        self.playManager.stopAudio()
+        playManager.stopAudio()
     }
     
     //MARK: PROTOCOLS & DELEGATES
     
     func playManagerAudioFinish()
     {
-        self.delegate.presenterAudioFinish()
+        delegate.presenterAudioFinish()
     }
 }

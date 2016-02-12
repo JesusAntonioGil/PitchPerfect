@@ -29,26 +29,26 @@ class RecordManager: NSObject, AVAudioRecorderDelegate {
     {
         do
         {
-            try self.audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            self.audioRecorder = try AVAudioRecorder(URL: self.getURLFilePathAudioRecord(), settings: [:])
+            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            audioRecorder = try AVAudioRecorder(URL: getURLFilePathAudioRecord(), settings: [:])
         }
         catch
         {
             print("AVAudioSession set category error.")
         }
         
-        self.audioRecorder.delegate = self
-        self.audioRecorder.meteringEnabled = true
-        self.audioRecorder.prepareToRecord()
-        self.audioRecorder.record()
+        audioRecorder.delegate = self
+        audioRecorder.meteringEnabled = true
+        audioRecorder.prepareToRecord()
+        audioRecorder.record()
     }
     
     func stopAudio()
     {
-        self.audioRecorder.stop()
+        audioRecorder.stop()
         do
         {
-            try self.audioSession.setActive(false)
+            try audioSession.setActive(false)
         }
         catch
         {
@@ -70,6 +70,6 @@ class RecordManager: NSObject, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool)
     {
-        self.delegate.recordManagerDidFinishRecording(flag, recorderAudio: RecorderAudio(filePathURL: self.audioRecorder.url, title: self.audioRecorder.url.lastPathComponent))
+        delegate.recordManagerDidFinishRecording(flag, recorderAudio: RecorderAudio(filePathURL: audioRecorder.url, title: audioRecorder.url.lastPathComponent))
     }
 }

@@ -27,13 +27,13 @@ class RecordPresenter: NSObject, RecordManagerDelegate {
     
     func recordSound()
     {
-        self.recordManager.delegate = self
-        self.recordManager.recordAudio()
+        recordManager.delegate = self
+        recordManager.recordAudio()
     }
     
     func stopSound()
     {
-        self.recordManager.stopAudio()
+        recordManager.stopAudio()
     }
     
     //MARK: PROTOCOLS & DELEGATES
@@ -41,6 +41,6 @@ class RecordPresenter: NSObject, RecordManagerDelegate {
     
     func recordManagerDidFinishRecording(success: Bool, recorderAudio: RecorderAudio!)
     {
-        self.delegate.recordPresenterDidFinishRecording(success, recorderAudio: recorderAudio)
+        delegate.recordPresenterDidFinishRecording(success, recorderAudio: recorderAudio)
     }
 }

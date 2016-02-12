@@ -39,47 +39,47 @@ class PlayManager: NSObject, AVAudioPlayerDelegate {
     
     override init()
     {
-        self.playType = .Slow
+        playType = .Slow
     }
     
     //MARK: PUBLIC
     
     func playAudioWithURL(url: NSURL, type: PlayType)
     {
-        self.stopAudio()
-        self.playType = type
+        stopAudio()
+        playType = type
         
         switch (type)
         {
             case .Slow:
-                self.playSound(url, rate: 0.5)
+                playSound(url, rate: 0.5)
             case .Fast:
-                self.playSound(url, rate: 2.0)
+                playSound(url, rate: 2.0)
             case .Chipmunk:
-                self.audioEngine(url, pitch: 1000.0)
+                audioEngine(url, pitch: 1000.0)
             case .Vader:
-                self.audioEngine(url, pitch: -1000.0)
+                audioEngine(url, pitch: -1000.0)
         }
     }
     
     func stopAudio()
     {
-        switch (self.playType)
+        switch (playType)
         {
             case .Slow, .Fast:
-                if(self.audioPlayerState == true) {
-                    self.audioPlayer.stop()
-                    self.audioEngineState = false
+                if(audioPlayerState == true) {
+                    audioPlayer.stop()
+                    audioEngineState = false
                 }
             case .Chipmunk, .Vader:
-                if(self.audioEngineState == true) {
-                    self.audioEngine.stop()
-                    self.pitchPlayer.stop()
-                    self.audioEngineState = false
+                if(audioEngineState == true) {
+                    audioEngine.stop()
+                    pitchPlayer.stop()
+                    audioEngineState = false
                 }
         }
         
-        self.delegate.playManagerAudioFinish()
+        delegate.playManagerAudioFinish()
     }
     
     //MARK: PRIVATE
@@ -91,13 +91,13 @@ class PlayManager: NSObject, AVAudioPlayerDelegate {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
             
-            self.audioPlayer = try AVAudioPlayer(contentsOfURL: url)
-            self.audioPlayer.delegate = self
-            self.audioPlayer.enableRate = true
-            self.audioPlayer.rate = rate
-            self.audioPlayer.prepareToPlay()
-            self.audioPlayer.play()
-            self.audioPlayerState = true
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+            audioPlayer.delegate = self
+            audioPlayer.enableRate = true
+            audioPlayer.rate = rate
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+            audioPlayerState = true
         }
         catch
         {
@@ -111,21 +111,21 @@ class PlayManager: NSObject, AVAudioPlayerDelegate {
         let timePitch = AVAudioUnitTimePitch()
         timePitch.pitch = pitch
         
-        self.audioEngine = AVAudioEngine()
-        self.pitchPlayer = AVAudioPlayerNode()
+        audioEngine = AVAudioEngine()
+        pitchPlayer = AVAudioPlayerNode()
         
-        self.audioEngine.attachNode(self.pitchPlayer)
-        self.audioEngine.attachNode(timePitch)
+        audioEngine.attachNode(pitchPlayer)
+        audioEngine.attachNode(timePitch)
         
-        self.audioEngine.connect(self.pitchPlayer, to: timePitch, format: .None)
-        self.audioEngine.connect(timePitch, to: self.audioEngine.outputNode, format: .None)
+        audioEngine.connect(pitchPlayer, to: timePitch, format: .None)
+        audioEngine.connect(timePitch, to: audioEngine.outputNode, format: .None)
         
         do
         {
-            try self.pitchPlayer.scheduleFile(AVAudioFile(forReading: url), atTime: nil, completionHandler: nil)
-            try self.audioEngine.start()
-            self.pitchPlayer.play()
-            self.audioEngineState = true
+            try pitchPlayer.scheduleFile(AVAudioFile(forReading: url), atTime: nil, completionHandler: nil)
+            try audioEngine.start()
+            pitchPlayer.play()
+            audioEngineState = true
         }
         catch
         {
@@ -138,8 +138,8 @@ class PlayManager: NSObject, AVAudioPlayerDelegate {
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool)
     {
-        self.audioPlayerState = false
-        self.delegate.playManagerAudioFinish()
+        audioPlayerState = false
+        delegate.playManagerAudioFinish()
     }
 
 }

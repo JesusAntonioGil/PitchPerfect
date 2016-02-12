@@ -18,6 +18,7 @@ class RecordViewController: UIViewController, RecordPresenterDelegate {
     var controllerAssembly: ControllerAssembly!
     
     private var presenter: RecordPresenter!
+    private var recorderAudio: RecorderAudio!
     
     
     //MARK: LIVE CYCLE
@@ -26,36 +27,45 @@ class RecordViewController: UIViewController, RecordPresenterDelegate {
     {
         super.viewDidLoad()
         
-        self.presenter = self.controllerAssembly.recordPresenter(self) as! RecordPresenter
+        presenter = controllerAssembly.recordPresenter(self) as! RecordPresenter
     }
 
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if(segue.identifier == "playSegue")
+        {
+            let playViewController: PlayViewController = segue.destinationViewController as! PlayViewController
+            playViewController.recorderAudio = recorderAudio
+        }
+    }
 
     //MARK: ACTIONS
     
     @IBAction func onRecordButtonTap(sender: AnyObject)
     {
-        self.recordButton.enabled = false
-        self.stopButton.hidden = false
-        self.recordStateLabel.text = "Recording!"
+        recordButton.enabled = false
+        stopButton.hidden = false
+        recordStateLabel.text = "Recording!"
         
-        self.presenter.recordSound()
+        presenter.recordSound()
     }
     
     @IBAction func onStopButtonTap(sender: AnyObject)
     {
-        self.presenter.stopSound()
+        presenter.stopSound()
     }
     
     //MARK: PRIVATE
     
     private func pushToPlayViewController(recorderAudio: RecorderAudio)
     {
-        let playViewController: PlayViewController = self.controllerAssembly.playViewController(recorderAudio) as! PlayViewController
-        self.navigationController?.pushViewController(playViewController, animated: true)
+        self.recorderAudio = recorderAudio
+        performSegueWithIdentifier("playSegue", sender: self)
     }
 
     //MARK: PROTOCOLS & DELEGATES
@@ -65,11 +75,11 @@ class RecordViewController: UIViewController, RecordPresenterDelegate {
     {
         if(success)
         {
-            self.recordButton.enabled = true
-            self.stopButton.hidden = true
-            self.recordStateLabel.text = "Record!"
+            recordButton.enabled = true
+            stopButton.hidden = true
+            recordStateLabel.text = "Record!"
             
-            self.pushToPlayViewController(recorderAudio)
+            pushToPlayViewController(recorderAudio)
         }
     }
 }

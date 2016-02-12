@@ -13,10 +13,8 @@ class PlayViewController: UIViewController, PlayPresenterDelegate {
 
     @IBOutlet weak var stopButton: UIButton!
     
-    //Injected
-    var controllerAssembly: ControllerAssembly!
     var recorderAudio: RecorderAudio!
-    
+    private var controllerAssembly = ControllerAssembly()
     private var presenter: PlayPresenter!
     
     
@@ -26,12 +24,12 @@ class PlayViewController: UIViewController, PlayPresenterDelegate {
     {
         super.viewDidLoad()
         
-        self.presenter = self.controllerAssembly.playPresenter(self) as! PlayPresenter
+        presenter = controllerAssembly.playPresenter(self) as! PlayPresenter
     }
     
     override func viewWillDisappear(animated: Bool)
     {
-        self.presenter.stopAudio()
+        presenter.stopAudio()
         
         super.viewWillDisappear(animated)
     }
@@ -46,14 +44,14 @@ class PlayViewController: UIViewController, PlayPresenterDelegate {
     
     @IBAction func onPlayButtonTap(sender: AnyObject)
     {
-        self.presenter.playAudio(self.recorderAudio.filePathURL, type: PlayType(rawValue: sender.tag)!)
-        self.stopButton.hidden = false
+        presenter.playAudio(self.recorderAudio.filePathURL, type: PlayType(rawValue: sender.tag)!)
+        stopButton.hidden = false
     }
     
     @IBAction func onStopButtonTap(sender: AnyObject)
     {
-        self.presenter.stopAudio()
-        self.stopButton.hidden = true
+        presenter.stopAudio()
+        stopButton.hidden = true
     }
     
     
@@ -61,6 +59,6 @@ class PlayViewController: UIViewController, PlayPresenterDelegate {
     
     func presenterAudioFinish()
     {
-        self.stopButton.hidden = true
+        stopButton.hidden = true
     }
 }
